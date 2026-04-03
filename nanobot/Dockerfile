@@ -9,7 +9,7 @@ ENV UV_PROJECT_ENVIRONMENT=/opt/nanobot-venv
 WORKDIR /app
 
 COPY --from=workspace pyproject.toml uv.lock /app/
-COPY pyproject.toml README.md /app/nanobot/
+COPY pyproject.toml /app/nanobot/
 COPY --from=workspace mcp /app/mcp
 COPY --from=workspace nanobot-websocket-channel /app/nanobot-websocket-channel
 
