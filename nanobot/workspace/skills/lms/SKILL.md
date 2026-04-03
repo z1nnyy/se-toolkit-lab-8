@@ -29,6 +29,8 @@ Use the `lms_*` MCP tools whenever the user asks about real LMS data.
   choose a lab.
 - When the current channel supports interactive UI and the `mcp_webchat_ui_message`
   tool is available, let the shared `structured-ui` skill present the lab choice.
+- For lab choices, use short labels like `Lab 01` and stable values like
+  `lab-01` so the follow-up tool call can reuse the selected value directly.
 - If the backend is healthy but no lab data is available yet, use
   `lms_sync_pipeline` and retry the question.
 
