@@ -18,4 +18,9 @@ Get USER_ID and CHANNEL from the current session (e.g., `8281248569` and `telegr
 - **Remove**: `edit_file` to delete completed tasks
 - **Rewrite**: `write_file` to replace all tasks
 
-When the user asks for a recurring/periodic task, update `HEARTBEAT.md` instead of creating a one-time cron reminder.
+Use `HEARTBEAT.md` for repo-maintenance or background tasks that are not tied to
+a live chat session.
+
+When the user asks for a recurring health check or reminder that should post
+back into the current chat, use the built-in `cron` tool instead of
+`HEARTBEAT.md`.
