@@ -5,12 +5,23 @@ Paste your checkpoint evidence below. Add screenshots as image files in the repo
 ## Task 1A — Bare agent
 
 Prompt:
-`What is 2+2?`
+`What is the agentic loop?`
 
 Agent response:
 
 ```text
-2 + 2 = 4 🐈
+The agentic loop is the cycle an AI agent follows to complete a task:
+
+1. Understand the user's request and current context.
+2. Decide what action to take next.
+3. Use available tools when needed.
+4. Observe the results of those tools.
+5. Update its plan or response based on the new information.
+6. Repeat until the task is finished.
+
+In nanobot, this loop is built into the framework, so the agent can reason,
+call tools, read their outputs, and continue iterating without you manually
+implementing that control flow.
 ```
 
 Prompt:
@@ -55,20 +66,15 @@ rates, group performance, or top learners?
 ```
 
 Prompt:
-`Describe the architecture of the LMS system`
+`Is the LMS backend healthy?`
 
 Agent response:
 
 ```text
-The LMS system follows a layered architecture:
+Yes — the LMS backend is healthy.
 
-- Browser clients access the system through Caddy on port 42002.
-- Caddy reverse-proxies API requests to the backend service.
-- The backend service exposes LMS endpoints and analytics endpoints.
-- PostgreSQL stores LMS items, learners, and interactions.
-- The ETL pipeline syncs data from the autochecker into the backend database.
-- Nanobot can access the LMS through the mcp_lms server, which calls the backend.
-- Qwen Code API provides the LLM endpoint used by nanobot.
+The health check succeeded, and the backend currently has real data available,
+including 8 labs in the LMS.
 ```
 
 ## Task 1C — Skill prompt
@@ -79,25 +85,16 @@ Prompt:
 Agent response:
 
 ```text
-Here are the scores from the LMS:
+There are multiple labs available. Please choose which lab you want scores for:
 
-Lab 01 — Products, Architecture & Roles
-
-Completion Rate: 93.9% (108 passed / 115 total)
-
-Task                                        Avg Score  Attempts
-Lab setup                                   97.2%      119
-Task 0: Practice the Git workflow           65.2%      214
-Task 1: Product & architecture description  59.4%      90
-Task 2: Roles and skills mapping            53.9%      42
-Optional: Resolve a merge conflict          41.7%      6
-Optional: Create a release                  50.0%      2
-Optional: Add a CI check                    25.0%      4
-Optional: Plan skill development            0.0%       1
-
-Labs 02–08
-
-No submission data yet — all show 0 completions and no pass rate data.
+1. Lab 01 – Products, Architecture & Roles
+2. Lab 02 — Run, Fix, and Deploy a Backend Service
+3. Lab 03 — Backend API: Explore, Debug, Implement, Deploy
+4. Lab 04 — Testing, Front-end, and AI Agents
+5. Lab 05 — Data Pipeline and Analytics Dashboard
+6. Lab 06 — Build Your Own Agent
+7. Lab 07 — Build a Client with an AI Coding Agent
+8. Lab 08 — lab-08
 ```
 
 ## Task 2A — Deployed agent
